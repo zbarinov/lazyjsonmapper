@@ -91,6 +91,8 @@ class FunctionTranslation
      * @var string|null
      */
     public $camelPropName;
+    
+    public $ucamelPropName;
 
     /**
      * Constructor.
@@ -124,6 +126,7 @@ class FunctionTranslation
         // We are done with the conversions.
         $this->snakePropName = $result['snake'];
         $this->camelPropName = $result['camel'];
+        $this->ucamelPropName = $result['ucamel'];
     }
 
     /**
@@ -309,6 +312,7 @@ class FunctionTranslation
         return [
             'snake' => $snakePropName,
             'camel' => $camelPropName,
+            'ucamel' => ucfirst($camelPropName)
         ];
     }
 }

@@ -2147,6 +2147,9 @@ class LazyJsonMapper implements Serializable, JsonSerializable
         } elseif ($translation->camelPropName !== null
                   && $this->_hasPropertyDefinitionOrData($translation->camelPropName)) {
             $propName = $translation->camelPropName; // We found camel instead.
+        } elseif ($translation->ucamelPropName !== null
+                && $this->_hasPropertyDefinitionOrData($translation->ucamelPropName)) {
+            $propName = $translation->ucamelPropName; // We found upper camel instead. 
         } else {
             // This object doesn't have the requested property! If this is a
             // hasX() call, simply return false. In all other cases, throw!
