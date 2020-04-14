@@ -312,7 +312,7 @@ class FunctionTranslation
         return [
             'snake' => $snakePropName,
             'camel' => $camelPropName,
-            'ucamel' => ucfirst($camelPropName)
+            'ucamel' => ucfirst($camelPropName === null ? $snakePropName : $camelPropName)
         ];
     }
 }
